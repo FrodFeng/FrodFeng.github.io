@@ -8,10 +8,11 @@
     :root {
       --text: #222;
       --muted: #666;
-      --line: #e2e2e2;
-      --accent: #2f2f2f;
+      --line: #e5e5e5;
+      --accent: #1f4e8c;
+      --accent-dark: #173b69;
       --bg: #ffffff;
-      --soft: #f7f7f7;
+      --soft: #f7f8fa;
     }
 
     * {
@@ -31,6 +32,16 @@
       font-size: 17px;
     }
 
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
     .container {
       max-width: 980px;
       margin: 0 auto;
@@ -40,7 +51,7 @@
     .nav {
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(6px);
       border-bottom: 1px solid var(--line);
       z-index: 10;
@@ -57,43 +68,43 @@
 
     .nav-name {
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 650;
       color: #111;
     }
 
     .nav-links a {
       margin-left: 18px;
-      text-decoration: none;
-      color: var(--muted);
+      color: #555;
       font-size: 0.96rem;
     }
 
     .nav-links a:hover {
-      color: #111;
+      color: var(--accent);
+      text-decoration: none;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 36px;
+      grid-template-columns: 210px 1fr;
+      gap: 40px;
       align-items: center;
-      padding: 48px 0 34px;
+      padding: 52px 0 36px;
       border-bottom: 1px solid var(--line);
     }
 
     .photo {
-      width: 200px;
-      height: 240px;
+      width: 210px;
+      height: 250px;
       object-fit: cover;
       border-radius: 12px;
       border: 1px solid var(--line);
       background: var(--soft);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
 
     h1 {
       margin: 0 0 8px 0;
-      font-size: 2.5rem;
+      font-size: 2.55rem;
       line-height: 1.15;
       font-weight: 700;
       color: #111;
@@ -108,13 +119,13 @@
     .subtitle {
       margin: 0 0 10px 0;
       font-size: 1.08rem;
-      color: var(--accent);
+      color: var(--accent-dark);
       font-weight: 600;
     }
 
     .affiliation {
       margin: 0 0 14px 0;
-      color: var(--muted);
+      color: #555;
     }
 
     .hero-note {
@@ -126,35 +137,20 @@
     .hero-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .hero-links a,
-    .pub-links a,
-    .contact a {
-      color: #2f2f2f;
-      text-decoration: none;
-      border-bottom: 1px solid #999;
-      padding-bottom: 1px;
-    }
-
-    .hero-links a:hover,
-    .pub-links a:hover,
-    .contact a:hover {
-      color: #000;
-      border-bottom-color: #000;
+      gap: 16px;
+      margin-top: 6px;
     }
 
     section {
-      margin-top: 40px;
+      margin-top: 42px;
     }
 
     h2 {
-      font-size: 1.28rem;
+      font-size: 1.3rem;
       margin: 0 0 16px 0;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--line);
-      color: #111;
+      color: var(--accent-dark);
     }
 
     p {
@@ -163,11 +159,11 @@
 
     .edu-item,
     .pub-item {
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .edu-degree {
-      font-weight: 600;
+      font-weight: 650;
       color: #111;
     }
 
@@ -175,18 +171,36 @@
       color: #444;
     }
 
-    .pub-title {
+    .pub-title-link {
+      color: var(--accent);
       font-weight: 600;
-      color: #111;
+    }
+
+    .pub-title-link:hover {
+      color: var(--accent-dark);
+    }
+
+    .journal-link {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .pub-meta {
-      color: var(--muted);
+      color: #555;
       margin-top: 4px;
     }
 
     .pub-links {
       margin-top: 6px;
+      font-size: 0.98rem;
+    }
+
+    .pub-links a {
+      color: #666;
+    }
+
+    .pub-links a:hover {
+      color: var(--accent);
     }
 
     .contact p {
@@ -194,7 +208,7 @@
     }
 
     .footer {
-      margin-top: 52px;
+      margin-top: 54px;
       padding-top: 18px;
       border-top: 1px solid var(--line);
       color: var(--muted);
@@ -261,7 +275,7 @@
           degeneracy in optimization, and Newton-type methods for structured problems.
         </p>
         <div class="hero-links">
-          <a href="mailto:864938594@qq.com">Email</a>
+          <a href="mailto:fengfuxiaoyue@amss.ac.cn">Email</a>
           <a href="https://github.com/FrodFeng" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
@@ -294,13 +308,18 @@
 
     <section id="publications">
       <h2>Publications</h2>
+
       <div class="pub-item">
         <div>
           F. X. Y. Feng, C. Ding, and X. D. Li,
-          <span class="pub-title">A quadratically convergent semismooth Newton method for nonlinear semidefinite programming without generalized Jacobian regularity</span>.
+          <a class="pub-title-link" href="https://doi.org/10.1007/s10107-025-02198-0" target="_blank" rel="noopener noreferrer">
+            A quadratically convergent semismooth Newton method for nonlinear semidefinite programming without generalized Jacobian regularity
+          </a>.
         </div>
         <div class="pub-meta">
-          <em>Mathematical Programming</em>, 2025, pp. 1–41.
+          <a class="journal-link" href="https://doi.org/10.1007/s10107-025-02198-0" target="_blank" rel="noopener noreferrer">
+            Mathematical Programming
+          </a>, 1–41 (2025).
         </div>
         <div class="pub-links">
           <a href="https://doi.org/10.1007/s10107-025-02198-0" target="_blank" rel="noopener noreferrer">DOI</a>
@@ -312,7 +331,9 @@
       <div class="pub-item">
         <div>
           C. L. Bao, C. Ding, F. X. Y. Feng, and J. Y. Li,
-          <span class="pub-title">Stratification for nonlinear semidefinite programming</span>.
+          <a class="pub-title-link" href="https://arxiv.org/abs/2601.08362" target="_blank" rel="noopener noreferrer">
+            Stratification for nonlinear semidefinite programming
+          </a>.
         </div>
         <div class="pub-meta">
           Preprint, 2026.
@@ -325,7 +346,9 @@
       <div class="pub-item">
         <div>
           F. X. Y. Feng, C. Ding, and X. D. Li,
-          <span class="pub-title">A globally convergent semismooth Newton method for degenerate polyhedral projections</span>.
+          <span class="pub-title-link" style="font-weight:600;">
+            A globally convergent semismooth Newton method for degenerate polyhedral projections
+          </span>.
         </div>
         <div class="pub-meta">
           Working paper.
@@ -335,7 +358,7 @@
 
     <section id="contact" class="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:864938594@qq.com">864938594@qq.com</a></p>
+      <p>Email: <a href="mailto:fengfuxiaoyue@amss.ac.cn">fengfuxiaoyue@amss.ac.cn</a></p>
       <p>GitHub: <a href="https://github.com/FrodFeng" target="_blank" rel="noopener noreferrer">github.com/FrodFeng</a></p>
     </section>
 
