@@ -25,7 +25,7 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
       line-height: 1.8;
@@ -70,6 +70,7 @@
       font-size: 1rem;
       font-weight: 650;
       color: #111;
+      font-family: Georgia, "Times New Roman", Times, serif;
     }
 
     .nav-links a {
@@ -104,10 +105,12 @@
 
     h1 {
       margin: 0 0 8px 0;
-      font-size: 2.55rem;
-      line-height: 1.15;
+      font-size: 2.7rem;
+      line-height: 1.12;
       font-weight: 700;
       color: #111;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      letter-spacing: 0.2px;
     }
 
     .cn-name {
@@ -132,6 +135,7 @@
       margin: 0 0 16px 0;
       color: #444;
       max-width: 700px;
+      font-size: 1.02rem;
     }
 
     .hero-links {
@@ -146,15 +150,27 @@
     }
 
     h2 {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       margin: 0 0 16px 0;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--line);
       color: var(--accent-dark);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
     p {
       margin: 0 0 14px 0;
+    }
+
+    ul {
+      margin: 8px 0 0 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 10px;
     }
 
     .edu-item,
@@ -242,7 +258,7 @@
       }
 
       h1 {
-        font-size: 2.1rem;
+        font-size: 2.2rem;
       }
     }
   </style>
@@ -252,7 +268,7 @@
     <div class="nav-inner">
       <div class="nav-name">Feng Fuxiaoyue</div>
       <div class="nav-links">
-        <a href="#about">About</a>
+        <a href="#research">Research Interests</a>
         <a href="#education">Education</a>
         <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
@@ -271,8 +287,7 @@
         <p class="subtitle">PhD Candidate in Mathematics</p>
         <p class="affiliation">Academy of Mathematics and Systems Science, Chinese Academy of Sciences</p>
         <p class="hero-note">
-          My research focuses on nonlinear semidefinite programming, variational analysis,
-          degeneracy in optimization, and Newton-type methods for structured problems.
+          Research interests: Degeneracy Analysis with applications; Optimization in machine learning.
         </p>
         <div class="hero-links">
           <a href="mailto:fengfuxiaoyue@amss.ac.cn">Email</a>
@@ -281,17 +296,12 @@
       </div>
     </header>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I am a PhD candidate in mathematics at the Academy of Mathematics and Systems Science,
-        Chinese Academy of Sciences. My research is mainly concerned with nonlinear semidefinite programming,
-        variational analysis, and Newton-type methods for structured optimization problems.
-      </p>
-      <p>
-        I am particularly interested in degeneracy and the interplay between variational structure,
-        regularity conditions, and algorithm design in optimization.
-      </p>
+    <section id="research">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Degeneracy Analysis with applications</li>
+        <li>Optimization in machine learning</li>
+      </ul>
     </section>
 
     <section id="education">
