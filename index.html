@@ -89,7 +89,7 @@
       grid-template-columns: 210px 1fr;
       gap: 40px;
       align-items: center;
-      padding: 52px 0 36px;
+      padding: 52px 0 30px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -114,7 +114,7 @@
     }
 
     .cn-name {
-      margin: 0 0 16px 0;
+      margin: 0 0 14px 0;
       color: var(--muted);
       font-size: 1rem;
     }
@@ -131,22 +131,15 @@
       color: #555;
     }
 
-    .hero-note {
-      margin: 0 0 16px 0;
-      color: #444;
-      max-width: 700px;
-      font-size: 1.02rem;
-    }
-
     .hero-links {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     section {
-      margin-top: 42px;
+      margin-top: 38px;
     }
 
     h2 {
@@ -173,9 +166,8 @@
       margin-bottom: 10px;
     }
 
-    .edu-item,
-    .pub-item {
-      margin-bottom: 24px;
+    .edu-item {
+      margin-bottom: 22px;
     }
 
     .edu-degree {
@@ -187,9 +179,23 @@
       color: #444;
     }
 
+    .pub-list {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .pub-list li {
+      margin-bottom: 22px;
+      padding-left: 6px;
+    }
+
+    .pub-authors {
+      color: #2b2b2b;
+    }
+
     .pub-title-link {
       color: var(--accent);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .pub-title-link:hover {
@@ -199,6 +205,7 @@
     .journal-link {
       color: var(--accent);
       font-style: italic;
+      font-weight: 600;
     }
 
     .pub-meta {
@@ -296,8 +303,9 @@
     <section id="research">
       <h2>Research Interests</h2>
       <ul>
-        <li>Degeneracy Analysis with applications</li>
-        <li>Optimization in machine learning</li>
+        <li>Regularity in Matrix Optimization</li>
+        <li>Degeneracy Analysis with Applications</li>
+        <li>Second-Order Optimization in AI</li>
       </ul>
     </section>
 
@@ -315,52 +323,53 @@
 
     <section id="publications">
       <h2>Publications</h2>
+      <ol class="pub-list">
+        <li>
+          <div class="pub-authors">
+            F. X. Y. Feng, C. Ding, and X. D. Li,
+            <a class="pub-title-link" href="https://doi.org/10.1007/s10107-025-02198-0" target="_blank" rel="noopener noreferrer">
+              A Quadratically Convergent Semismooth Newton Method for Nonlinear Semidefinite Programming Without Generalized Jacobian Regularity
+            </a>.
+          </div>
+          <div class="pub-meta">
+            <a class="journal-link" href="https://doi.org/10.1007/s10107-025-02198-0" target="_blank" rel="noopener noreferrer">
+              Mathematical Programming
+            </a>, 1–41 (2025).
+          </div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/s10107-025-02198-0" target="_blank" rel="noopener noreferrer">DOI</a>
+            &nbsp;|&nbsp;
+            <a href="https://arxiv.org/abs/2402.13814" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </li>
 
-      <div class="pub-item">
-        <div>
-          F. X. Y. Feng, C. Ding, and X. D. Li,
-          <a class="pub-title-link" href="https://doi.org/10.1007/s10107-025-02198-0" target="_blank" rel="noopener noreferrer">
-            A quadratically convergent semismooth Newton method for nonlinear semidefinite programming without generalized Jacobian regularity
-          </a>.
-        </div>
-        <div class="pub-meta">
-          <a class="journal-link" href="https://doi.org/10.1007/s10107-025-02198-0" target="_blank" rel="noopener noreferrer">
-            Mathematical Programming
-          </a>, 1–41 (2025).
-        </div>
-        <div class="pub-links">
-          <a href="https://doi.org/10.1007/s10107-025-02198-0" target="_blank" rel="noopener noreferrer">DOI</a>
-          &nbsp;|&nbsp;
-          <a href="https://arxiv.org/abs/2402.13814" target="_blank" rel="noopener noreferrer">arXiv</a>
-        </div>
-      </div>
+        <li>
+          <div class="pub-authors">
+            C. L. Bao, C. Ding, F. X. Y. Feng, and J. Y. Li,
+            <a class="pub-title-link" href="https://arxiv.org/abs/2601.08362" target="_blank" rel="noopener noreferrer">
+              Stratification for Nonlinear Semidefinite Programming
+            </a>.
+          </div>
+          <div class="pub-meta">
+            Preprint, 2026.
+          </div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2601.08362" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </li>
 
-      <div class="pub-item">
-        <div>
-          C. L. Bao, C. Ding, F. X. Y. Feng, and J. Y. Li,
-          <a class="pub-title-link" href="https://arxiv.org/abs/2601.08362" target="_blank" rel="noopener noreferrer">
-            Stratification for nonlinear semidefinite programming
-          </a>.
-        </div>
-        <div class="pub-meta">
-          Preprint, 2026.
-        </div>
-        <div class="pub-links">
-          <a href="https://arxiv.org/abs/2601.08362" target="_blank" rel="noopener noreferrer">arXiv</a>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div>
-          F. X. Y. Feng, C. Ding, and X. D. Li,
-          <span class="pub-title-link" style="font-weight:600;">
-            A globally convergent semismooth Newton method for degenerate polyhedral projections
-          </span>.
-        </div>
-        <div class="pub-meta">
-          Working paper.
-        </div>
-      </div>
+        <li>
+          <div class="pub-authors">
+            F. X. Y. Feng, C. Ding, and X. D. Li,
+            <span class="pub-title-link">
+              A Globally Convergent Semismooth Newton Method for Degenerate Polyhedral Projections
+            </span>.
+          </div>
+          <div class="pub-meta">
+            Working paper.
+          </div>
+        </li>
+      </ol>
     </section>
 
     <section id="contact" class="contact">
