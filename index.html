@@ -8,8 +8,8 @@
     :root {
       --text: #222;
       --muted: #666;
-      --line: #dddddd;
-      --accent: #3a3a3a;
+      --line: #e2e2e2;
+      --accent: #2f2f2f;
       --bg: #ffffff;
       --soft: #f7f7f7;
     }
@@ -18,80 +18,127 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
-      line-height: 1.75;
+      line-height: 1.8;
+      font-size: 17px;
     }
 
     .container {
-      max-width: 960px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 48px 24px 72px;
+      padding: 0 24px 72px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover {
+      color: #111;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 32px;
+      grid-template-columns: 200px 1fr;
+      gap: 36px;
       align-items: center;
-      padding-bottom: 32px;
+      padding: 48px 0 34px;
       border-bottom: 1px solid var(--line);
     }
 
     .photo {
-      width: 180px;
-      height: 220px;
+      width: 200px;
+      height: 240px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid var(--line);
       background: var(--soft);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     }
 
     h1 {
-      margin: 0 0 6px 0;
-      font-size: 2.2rem;
+      margin: 0 0 8px 0;
+      font-size: 2.5rem;
+      line-height: 1.15;
       font-weight: 700;
       color: #111;
     }
 
     .cn-name {
-      margin: 0 0 14px 0;
+      margin: 0 0 16px 0;
       color: var(--muted);
       font-size: 1rem;
     }
 
     .subtitle {
-      margin: 0 0 8px 0;
-      font-size: 1.05rem;
+      margin: 0 0 10px 0;
+      font-size: 1.08rem;
       color: var(--accent);
       font-weight: 600;
     }
 
-    .affiliation,
-    .meta {
-      margin: 4px 0;
+    .affiliation {
+      margin: 0 0 14px 0;
       color: var(--muted);
     }
 
-    .links {
-      margin-top: 16px;
+    .hero-note {
+      margin: 0 0 16px 0;
+      color: #444;
+      max-width: 700px;
+    }
+
+    .hero-links {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
     }
 
-    .links a,
+    .hero-links a,
     .pub-links a,
     .contact a {
       color: #2f2f2f;
       text-decoration: none;
       border-bottom: 1px solid #999;
+      padding-bottom: 1px;
     }
 
-    .links a:hover,
+    .hero-links a:hover,
     .pub-links a:hover,
     .contact a:hover {
       color: #000;
@@ -99,71 +146,106 @@
     }
 
     section {
-      margin-top: 36px;
+      margin-top: 40px;
     }
 
     h2 {
-      font-size: 1.2rem;
-      margin: 0 0 14px 0;
-      padding-bottom: 8px;
+      font-size: 1.28rem;
+      margin: 0 0 16px 0;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--line);
       color: #111;
     }
 
     p {
-      margin: 0 0 12px 0;
+      margin: 0 0 14px 0;
     }
 
     .edu-item,
     .pub-item {
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     .edu-degree {
       font-weight: 600;
+      color: #111;
+    }
+
+    .edu-school {
+      color: #444;
     }
 
     .pub-title {
       font-weight: 600;
+      color: #111;
     }
 
     .pub-meta {
       color: var(--muted);
-    }
-
-    .pub-links {
       margin-top: 4px;
     }
 
+    .pub-links {
+      margin-top: 6px;
+    }
+
     .contact p {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .footer {
-      margin-top: 48px;
-      padding-top: 20px;
+      margin-top: 52px;
+      padding-top: 18px;
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 760px) {
+      body {
+        font-size: 16px;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+
       .hero {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
 
       .photo {
-        width: 160px;
-        height: 200px;
+        width: 180px;
+        height: 220px;
       }
 
       h1 {
-        font-size: 1.9rem;
+        font-size: 2.1rem;
       }
     }
   </style>
 </head>
 <body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="nav-name">Feng Fuxiaoyue</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <header class="hero">
       <div>
@@ -174,40 +256,43 @@
         <p class="cn-name">冯孚晓越</p>
         <p class="subtitle">PhD Candidate in Mathematics</p>
         <p class="affiliation">Academy of Mathematics and Systems Science, Chinese Academy of Sciences</p>
-        <p class="meta">Chinese Academy of Sciences</p>
-        <p class="meta">Email: <a href="mailto:864938594@qq.com">864938594@qq.com</a></p>
-
-        <div class="links">
+        <p class="hero-note">
+          My research focuses on nonlinear semidefinite programming, variational analysis,
+          degeneracy in optimization, and Newton-type methods for structured problems.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:864938594@qq.com">Email</a>
           <a href="https://github.com/FrodFeng" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://arxiv.org/abs/2402.13814" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/abs/2601.08362" target="_blank" rel="noopener noreferrer">Recent Preprint</a>
         </div>
       </div>
     </header>
 
-    <section>
+    <section id="about">
       <h2>About</h2>
       <p>
         I am a PhD candidate in mathematics at the Academy of Mathematics and Systems Science,
-        Chinese Academy of Sciences. My research focuses on nonlinear semidefinite programming,
+        Chinese Academy of Sciences. My research is mainly concerned with nonlinear semidefinite programming,
         variational analysis, and Newton-type methods for structured optimization problems.
-        I am particularly interested in degeneracy and algorithmic issues arising in optimization.
+      </p>
+      <p>
+        I am particularly interested in degeneracy and the interplay between variational structure,
+        regularity conditions, and algorithm design in optimization.
       </p>
     </section>
 
-    <section>
+    <section id="education">
       <h2>Education</h2>
       <div class="edu-item">
         <div class="edu-degree">Ph.D. in Mathematics, 2021–2026</div>
-        <div>Chinese Academy of Sciences</div>
+        <div class="edu-school">Chinese Academy of Sciences</div>
       </div>
       <div class="edu-item">
         <div class="edu-degree">B.S. in Mathematics, 2017–2021</div>
-        <div>Tsinghua University</div>
+        <div class="edu-school">Tsinghua University</div>
       </div>
     </section>
 
-    <section>
+    <section id="publications">
       <h2>Publications</h2>
       <div class="pub-item">
         <div>
@@ -223,17 +308,14 @@
           <a href="https://arxiv.org/abs/2402.13814" target="_blank" rel="noopener noreferrer">arXiv</a>
         </div>
       </div>
-    </section>
 
-    <section>
-      <h2>Preprints</h2>
       <div class="pub-item">
         <div>
           C. L. Bao, C. Ding, F. X. Y. Feng, and J. Y. Li,
           <span class="pub-title">Stratification for nonlinear semidefinite programming</span>.
         </div>
         <div class="pub-meta">
-          Preprint, January 2026.
+          Preprint, 2026.
         </div>
         <div class="pub-links">
           <a href="https://arxiv.org/abs/2601.08362" target="_blank" rel="noopener noreferrer">arXiv</a>
@@ -251,7 +333,7 @@
       </div>
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:864938594@qq.com">864938594@qq.com</a></p>
       <p>GitHub: <a href="https://github.com/FrodFeng" target="_blank" rel="noopener noreferrer">github.com/FrodFeng</a></p>
